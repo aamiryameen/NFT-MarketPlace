@@ -3,7 +3,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
 const imageRoutes = require('./routes/imageRoutes');
-const {singIn} = require('./controllers/authControllers')
+const {signIn, signUp} = require('./controllers/authControllers')
 
 const app = express();
 app.use(cors());
@@ -40,7 +40,8 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
 
 app.use('/api', imageRoutes);
-app.use('/signIn', )
+app.use('/signUp', signUp)
+app.use('/signIn', signIn)
 
 // mongoose.connect('mongodb://localhost/imageDB', { useNewUrlParser: true, useUnifiedTopology: true });
 

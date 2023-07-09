@@ -1,4 +1,4 @@
-import { useRef } from "react";
+
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const userModal = require("../model/user");
@@ -57,4 +57,4 @@ const signIn = async (req, res) => {
   }
 };
 
-module.exports = { signUp, signIn };
+export  { signUp, signIn };
