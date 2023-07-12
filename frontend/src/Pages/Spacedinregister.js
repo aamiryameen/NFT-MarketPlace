@@ -65,7 +65,14 @@ function Spacedinregister() {
 									Diam Sit Amet Nisl Suscipit. A Condimentum Vitae Sapien Pellentesque Habitant Morbi Tristique Senectus. Odio Tempor Orci Dapibus Ultrices In Iaculis Nunc Sed. Massa Enim Nec Dui Nunc Mattis Enim Ut Tellus. Mattis Aliquam Faucibus Purus In Massa Tempor Nec Feugiat Nisl. Augue Lacus Viverra Vitae Congue Eu Conseqsnc Sed. Massa Enim Nec Dui Nunc Mattis Enim Ut Tellus. Mattis Aliquam Faucib
 								</p>
 								<div className="btnWrapper">
-									<Link to="/Spacedin" className="customBtn">
+									{/* <Link to="/Spacedin" className="customBtn">
+										<img src="assets/images/btnBg.png" className="img-fluid" />
+										<span>
+											Register Now <i className="fa-solid fa-arrow-right"></i>
+										</span> 
+									</Link> */}
+
+									<Link to="/RegisterForm" className="customBtn">
 										<img src="assets/images/btnBg.png" className="img-fluid" />
 										<span>
 											Register Now <i className="fa-solid fa-arrow-right"></i>
@@ -73,7 +80,7 @@ function Spacedinregister() {
 									</Link>
 								</div>
 								<p className="font12">
-									<Link to="#!">ALREADY HAVE AN ACCOUNT?</Link>
+									<Link to="/login">ALREADY HAVE AN ACCOUNT?</Link>
 								</p>
 							</div>
 						</div>	

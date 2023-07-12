@@ -18,7 +18,13 @@ function Home() {
 					Come join us to ex<span className='text_stroke'>plore</span> our world in 3D-fu<span className='text_stroke'>ll</span> digital spectrum        
 				</p>
 				<div className="btnWrapper">
-					<Link to="/Spacein" className="customBtn">
+					{/* <Link to="/Spacein" className="customBtn">
+						<img src="assets/images/btnBg.png" className="img-fluid" />
+						<span>
+							spaced in <i className="fa-solid fa-arrow-right"></i>
+						</span> 
+					</Link> */}
+					<Link to="/Spacedinregister" className="customBtn">
 						<img src="assets/images/btnBg.png" className="img-fluid" />
 						<span>
 							spaced in <i className="fa-solid fa-arrow-right"></i>

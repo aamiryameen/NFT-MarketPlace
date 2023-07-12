@@ -58,7 +58,7 @@ function Cryppunks() {
 				{/* <!-- <img src="assets/images/circle.png" className="img-fluid circleImg"> --> */}
 				<img src="assets/images/line2.png" className="img-fluid line2Img" />
 				<div className="btnWrapper">
-					<Link to="/Spacedinregister" className="customBtn">
+					<Link to="/Spacedin" className="customBtn">
 						<img src="assets/images/btnBg.png" className="img-fluid" />
 						<span>
 							MEMBERSHIP FORM <i className="fa-solid fa-arrow-right"></i>

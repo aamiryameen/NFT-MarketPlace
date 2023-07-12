@@ -12,23 +12,25 @@ const signUp = async (req, res) => {
     if (existingUser) {
       return res.status(400).json({
         message: "User already exists",
+        status: 400
       });
     }
     const hashPassword = await bcrypt.hash(password, 10);
     const hashConfirmPassword = await bcrypt.hash(confirmPassword, 10);
 
-    const result = await userModal.create({
+    const result = await userModal.insertMany({
       firstName: firstName,
       lastName: lastName,
       email: email,
-      password: hashPassword,
-      confirmPassword: hashConfirmPassword,
+      password: password,
+      confirmPassword: confirmPassword,
     });
 
-    const token = jwt.sign({ email: result.email, id: result._id }, SECRET_KEY);
-    res.status(201).json({ user: result, token: token });
+    const token = await jwt.sign({ email: result.email, id: result._id }, SECRET_KEY);
+    res.status(201).json({ success: true, message: 'User signUp successfully', token: token, status: 201 });
   } catch (error) {
-    res.status(500).json({ message: "Something went wrong" });
+    console.log('error: ', error)
+    res.status(500).json({success: false, message: "Something went wrong", status: 500 });
   }
 };
 
@@ -41,8 +43,8 @@ const signIn = async (req, res) => {
       res.status(404).json({ message: "User not found" });
     }
 
-    const matchPassword = await bcrypt.compare(password, existingUser.password);
-    if (!matchPassword) {
+    // const matchPassword = await bcrypt.compare(password, existingUser.password);
+    if (password != existingUser.password) {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
@@ -51,7 +53,7 @@ const signIn = async (req, res) => {
       SECRET_KEY
     );
 
-    res.status(201).json({ user: existingUser, token: token });
+    res.status(200).json({ user: existingUser, token: token, success: true, status: 200 });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
   }

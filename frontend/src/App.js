@@ -8,6 +8,7 @@ import Faqs from './Pages/Faqs'
 import Htmlcss from './Pages/Htmlcss'
 import Javacript from './Pages/Javacript'
 import Membershipform from './Pages/Membershipform'
+import RegisterForm from './Pages/RegisterForm'
 import Mission from './Pages/Mission'
 import Nftfeature from './Pages/Nftfeature'
 import Nftfeature2 from './Pages/Nftfeature2'
@@ -45,6 +46,7 @@ function App() {
           <Route path="/Htmlcss" element={<Htmlcss />} />
           <Route path="/Javacript" element={<Javacript />} />
           <Route path="/Membershipform" element={<Membershipform />} />
+          <Route path="/RegisterForm" element={<RegisterForm />} />
           <Route path="/Mission" element={<Mission />} />
           <Route path="/Nftfeature/:id" element={<Nftfeature />} />
           <Route path="/Nftfeature2" element={<Nftfeature2 />} />

@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
-  },
+  }, 
   lastName: {
     type: String,
     required: true,
@@ -14,11 +14,11 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   password: {
-    type: [String, Number],
+    type:  String,
     required: true,
   },
-  confirm_password: {
-    type: [String, Number],
+  confirmPassword: {
+    type:  String,
     required: true,
   },
 });

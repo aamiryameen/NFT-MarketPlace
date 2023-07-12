@@ -17,17 +17,16 @@ const storage = multer.memoryStorage({
 
 const upload = multer({ storage: storage });
 
-router.post('/upload', upload.single('selectedFile'), async (req, res) => {
+router.post('/upload', upload.single('file'), async (req, res) => {
+
   const newImage = new Image({
     title: req.body.title,
     description: req.body.description,
     price: req.body.price,
     category: req.body.category,
-    img: {
-      data: req.file.buffer,
-      contentType: req.file.mimetype,
-      id: req.body.id,
-    },
+    image: req.file.path,
+     
+    
   });
 
   try {

@@ -7,7 +7,7 @@ const connectDB = () => {
     mongoose.connect(db, {
     }).then(() => console.log(`MongoDB is Connected`))
     .catch(err => {
-        console.log('mongoose error: ', err)
+        console.log('mongoose error: ',err)
         console.error(err.message);
         process.exit(1);
     });

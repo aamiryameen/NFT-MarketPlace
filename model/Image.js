@@ -17,9 +17,9 @@ const imageSchema = new mongoose.Schema({
   category: {
     type: [String], // Add categories as an array of category objects
   },
-  img: {
-    data: Buffer,
-    contentType: String,
+  image: {
+    type: String,
+    required: true,
   },
 });
 const Image = mongoose.model('Image', imageSchema);

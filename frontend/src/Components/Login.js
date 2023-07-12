@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {setData} from '../utils/storage'
 import "./Login.css"
 // src/components/Login.js
 // import "../dashboard.css";
+import { AuthApi } from '../services/AuthService';
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -14,11 +16,22 @@ const Login = () => {
   const defaultUsername = "admin";
   const defaultPassword = "password";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    const data = {
+      email: username,
+      password: password
+
+    }
+
+    // const res = AuthApi.singIn(data)
+    // console.log('res', res);
+
     if (username === defaultUsername && password === defaultPassword) {
       localStorage.setItem('isloggedin', true);
-      navigate("/AdminDashboard");
+    // await setData("isloggedin", true);
+      navigate("/");
     } else {
       setError("Invalid username or password");
     }
